@@ -1,22 +1,20 @@
 import requests
 
-plataformas = {
-    "Github": "https://github.com/{}",
-    "Reddit": "https://reddit.com/user/{}",
-    "Twitter": "https://twitter.com/{}",
+username=(input("Digite o username: "))
+sites= {
+    "Steam": "https://steamcommunity.com/id/{}",
+    "Github": "https://github.com/{}"
+   
 }
 
-username = input("Digite um username: ")
 
-for nome, url in plataformas.items():
+for nome, url in sites.items():
     url = url.format(username)
-    response = requests.get(url, allow_redirects=True)
-    
-    if response.status_code == 200:
-        print(f"[+] {nome}: Encontrado: {url}")
-    
-    elif response.status_code == 404:
-        print(f"[-] {nome}: Perfil não encontrado: {url}")
-    
+    response = requests.get(url)
+    response.status_code
+    if response.status_code==200 and "Error" not in response.text:
+        print(f"[+] {nome}: encontrado!")
+    elif response.status_code==404:
+        print(f"[-] {nome}: não encontrado!")
     else:
-        print(f"[?] {nome}: Status inesperado: {response.status_code}")
+        print(f"[-] {nome}: não encontrado! ")   
