@@ -16,7 +16,7 @@ Digite o username do alvo que gostaria de localizar e em quais sites.
 ## Por que usar essa ferramenta?
 Ela é extremamente útil para verificar se o nickname que você deseja utilizar em determinada plataforma já existe, além do que permite alteração para outro site, se você assim preferir, tal como Instagram e outros. Ela permite também o reconhecimento de "alvos", como buscar o nickname do seu alvo em diversos sites de forma automática e eficiente, economizando horas de busca ou scrapping manual.
 
-Nessa nova atualização trouxe uma forma de "driblar" o bloqueio das requisições de alguns sites acerca de sempre encontrar as contas, que no caso esses mesmos sites enviam a requisição para a página de login, transformando assim o resultado sempre em "usuário encontrado", quando na verdade mesmo não são. 
+Nessa nova atualização trouxe uma forma de "driblar" o bloqueio das requisições de alguns sites acerca de sempre encontrar as contas, que no caso esses mesmos sites enviam a requisição para a página de login, transformando assim o resultado sempre em "usuário encontrado", quando na verdade mesmo não são.
 
 ## O que eu aprendi construindo a ferramenta?
 O status HTTP não é apenas backend, e sim informação. O "200", por exemplo, significa que tal user existe em determinada página, o "404" significa que não existe e o "301" que o site está redirecionando, ou seja, cada número tem de fato uma história. Entendi também que sites dificultam scraping de formas diferentes, e "contornar" isso me deu uma satisfação enorme. Grandes sites como Twitter, Instagram e etc bloqueiam verificação por status code, então decidi contornar isso através de "response.text", que é um método que extrai o conteúdo do corpo da resposta de uma requisição HTTP em formato de string.
